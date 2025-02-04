@@ -1,5 +1,5 @@
-COMPUTER_NAME="Neo"
-LANGUAGES=(en nl)
+COMPUTER_NAME="gergo.gacs"
+LANGUAGES=(en hun)
 LOCALE="en_US@currency=EUR"
 MEASUREMENT_UNITS="Centimeters"
 SCREENSHOTS_FOLDER="${HOME}/Screenshots"
@@ -26,7 +26,11 @@ osascript -e 'tell application "System Preferences" to quit'
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until this script has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+    sudo -n true
+    sleep 60
+    kill -0 "$$" || exit
+done 2>/dev/null &
 
 ###############################################################################
 # Computer & Host name                                                        #
@@ -60,10 +64,10 @@ sudo systemsetup -setusingnetworktime on
 ###############################################################################
 
 # Restart automatically if the computer freezes (Error:-99 can be ignored)
-sudo systemsetup -setrestartfreeze on 2> /dev/null
+sudo systemsetup -setrestartfreeze on 2>/dev/null
 
 # Set standby delay to 24 hours (default is 1 hour)
-sudo pmset -a standbydelay 86400
+# sudo pmset -a standbydelay 86400
 
 # Disable Sudden Motion Sensor
 sudo pmset -a sms 0
@@ -108,7 +112,7 @@ defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
 defaults write com.apple.CrashReporter DialogType -string "none"
 
 # Disable Notification Center and remove the menu bar icon
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2>/dev/null
 
 ###############################################################################
 # Keyboard & Input                                                            #
@@ -238,7 +242,7 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Disable the warning before emptying the Trash
-defaults write com.apple.finder WarnOnEmptyTrash -bool false
+# defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 # Expand the following File Info panes:
 # “General”, “Open with”, and “Sharing & Permissions”
@@ -377,5 +381,5 @@ defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 ###############################################################################
 
 for app in "Address Book" "Calendar" "Contacts" "Dock" "Finder" "Mail" "Safari" "SystemUIServer" "iCal"; do
-  killall "${app}" &> /dev/null
+    killall "${app}" &>/dev/null
 done
