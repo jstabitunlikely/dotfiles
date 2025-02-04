@@ -10,7 +10,7 @@ brew "git"                          # Distributed revision control system
 brew "git-extras"                   # Small git utilities
 brew "lotyp/formulae/dockutil"      # Tool for managing dock items
 brew "mas"                          # Mac App Store command-line interface
-brew "nano"                         # Free (GNU) replacement for the Pico text editor
+brew "micro"                        # Modern and intuitive terminal-based text editor
 brew "pre-commit"                   # Framework for managing multi-language pre-commit hooks
 brew "starship"                     # Cross-shell prompt for astronauts
 brew "stow"                         # Organize software neatly under a single directory tree (e.g. /usr/local)

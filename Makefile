@@ -114,6 +114,7 @@ git: brew
 
 python: brew
 	is-executable pyenv || brew install pyenv
+	is-executable pyenv-virtualenv || brew install pyenv-virtualenv
 	pyenv install 3
 
 npm: brew-packages

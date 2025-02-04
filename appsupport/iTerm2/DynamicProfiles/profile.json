@@ -195,7 +195,7 @@
                 "Green Component": 0.84313726425170898
             },
             "Only The Default BG Color Uses Transparency": true,
-            "Scrollback Lines": 1000,
+            "Scrollback Lines": 10000,
             "Badge Color (Dark)": {
                 "Red Component": 0.9787440299987793,
                 "Color Space": "sRGB",
