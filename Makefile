@@ -20,9 +20,9 @@ export APP_SUPPORT_HOME = "${HOME}/Library/Application\ Support"
 
 all: $(OS)
 
-macos: sudo core-macos packages link duti
+macos: sudo core-macos packages link duti bun
 
-linux: core-linux link
+linux: core-linux link bun
 
 core-macos: brew ${MY_SHELL} git npm python
 
@@ -83,13 +83,13 @@ bash: brew
 ifdef GITHUB_ACTION
 	if ! grep -q bash $(SHELLS); then \
 		brew install bash bash-completion@2 pcre && \
-		sudo append $(shell which bash) $(SHELLS) && \
+		echo $(shell which bash) | sudo tee -a $(SHELLS) && \
 		sudo chsh -s $(shell which bash); \
 	fi
 else
 	if ! grep -q bash $(SHELLS); then \
 		brew install bash bash-completion@2 pcre && \
-		sudo append $(shell which bash) $(SHELLS) && \
+		echo $(shell which bash) | sudo tee -a $(SHELLS) && \
 		chsh -s $(shell which bash); \
 	fi
 endif
@@ -137,6 +137,9 @@ rust-packages: brew-packages
 
 duti:
 	duti -v $(DOTFILES_DIR)/install/duti
+
+bun:
+  curl -fsSL https://bun.sh/install | bash
 
 test:
 	bats test
