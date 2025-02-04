@@ -164,3 +164,13 @@
 
 [color]
 	ui = auto
+
+[versionsort]
+	suffix = -alpha
+	suffix = -beta
+	suffix = -canary
+	suffix = -rc
+	suffix = -next
+
+[advice]
+	detachedHead = false
