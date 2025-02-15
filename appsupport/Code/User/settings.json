@@ -11,6 +11,8 @@
     "terminal.explorerKind": "external",
     "terminal.integrated.defaultProfile.osx": "zsh",
     // Editor
+    "editor.wordWrapColumn": 120,
+    "editor.lineNumbers": "relative",
     "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, FiraCode Nerd Font Mono",
     "editor.minimap.enabled": false,
     "editor.acceptSuggestionOnEnter": "smart",
@@ -43,6 +45,8 @@
     "[yaml]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
+    "yaml.format.proseWrap": "never",
+    "yaml.format.printWidth": 120,
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
@@ -66,8 +70,14 @@
     "cSpell.enabled": true,
     "cSpell.checkVSCodeSystemFiles": true,
     "cSpell.userWords": [
+        "cocotb",
+        "halfword",
+        "inout",
         "jstabitunlikely",
-        "regbank"
+        "pyuvm",
+        "regbank",
+        "seqr",
+        "strb"
     ],
     // Rewrap
     "rewrap.autoWrap.enabled": true,
@@ -78,6 +88,10 @@
     "python.defaultInterpreterPath": "~/.pyenv/shims/python",
     "python.analysis.completeFunctionParens": true,
     "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.generateWithTypeAnnotation": true,
+    "python.analysis.inlayHints.callArgumentNames": "partial",
+    "python.analysis.inlayHints.pytestParameters": true,
     // Autopep8
     "autopep8.args": [
         "--max-line-length=120"
