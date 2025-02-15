@@ -82,6 +82,7 @@
 
 	# Branches
     b = branch
+    ba = branch --all
     cb = checkout -b
 	co = checkout
     sw = switch
@@ -95,7 +96,7 @@
 
 	# Remote
     p = push
-	pf = push --force --force-with-lease
+	pf = push --force-with-lease
     pl = pull
 
     # Diff
