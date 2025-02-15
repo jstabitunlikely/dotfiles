@@ -1,18 +1,20 @@
-# .files
+# dotfiles
 
 These are my dotfiles. Take anything you want, but at your own risk.
 
 It mainly targets macOS systems (should install on e.g. Ubuntu as well for many tools, config and aliases etc).
 
+Primary shell is zsh. Upstream is using bash, so I left it in for now but may remove in the future.
+
 ## Highlights
 
 - Minimal efforts to install everything, using a [Makefile](./Makefile)
+- Well-organized and easy to customize
 - Mostly based around Homebrew, Caskroom and Node.js, latest Bash + GNU Utils
 - Fast and colored prompt
-- Updated macOS defaults
-- Well-organized and easy to customize
+- Customized macOS defaults
 - The installation and runcom setup is
-  [tested weekly on real Ubuntu and macOS machines](https://github.com/webpro/dotfiles/actions)
+  [tested weekly on real Ubuntu and macOS machines](https://github.com/jstabitunlikely/dotfiles/actions)
   (Ventura/13, Sonomo/14, Sequoia/15) using [a GitHub Action](./.github/workflows/dotfiles-installation.yml)
 - Supports both Apple Silicon (M1) and Intel chips
 
@@ -22,13 +24,13 @@ It mainly targets macOS systems (should install on e.g. Ubuntu as well for many 
 - [homebrew-cask](https://github.com/Homebrew/homebrew-cask) (packages: [Caskfile](./install/Caskfile))
 - [Node.js + npm LTS](https://nodejs.org/en/download/) (packages: [npmfile](./install/npmfile))
 - Latest Git, Bash, Python, GNU coreutils, curl, Ruby
-- `$EDITOR` is [GNU nano](https://www.nano-editor.org) (`$VISUAL` is `code` and Git `core.editor` is `code --wait`)
+- `$EDITOR` is [micro](https://micro-editor.github.io) (`$VISUAL` is `code` and Git `core.editor` is `code --wait`)
 
 ## Installation
 
 On a sparkling fresh installation of macOS:
 
-```bash
+```zsh
 sudo softwareupdate -i -a
 xcode-select --install
 ```
@@ -37,28 +39,28 @@ The Xcode Command Line Tools includes `git` and `make` (not available on stock m
 
 1. Install this repo with `curl` available:
 
-```bash
-bash -c "`curl -fsSL https://raw.githubusercontent.com/webpro/dotfiles/master/remote-install.sh`"
+```zsh
+bash -c "`curl -fsSL https://raw.githubusercontent.com/jstabitunlikely/dotfiles/master/remote-install.sh`"
 ```
 
 This will clone or download this repo to `~/.dotfiles` (depending on the availability of `git`, `curl` or `wget`).
 
 1. Alternatively, clone manually into the desired location:
 
-```bash
-git clone https://github.com/webpro/dotfiles.git ~/.dotfiles
+```zsh
+git clone https://github.com/jstabitunlikely/dotfiles.git ~/.dotfiles
 ```
 
 2. Use the [Makefile](./Makefile) to install the [packages listed above](#packages-overview), and symlink
    [runcom](./runcom) and [config](./config) files (using [stow](https://www.gnu.org/software/stow/)):
 
-```bash
+```zsh
 cd ~/.dotfiles
 make
 ```
 
 Running `make` with the Makefile is idempotent. The installation process in the Makefile is tested on every push and every week in this
-[GitHub Action](https://github.com/webpro/dotfiles/actions). Please file an issue in this repo if there are errors.
+[GitHub Action](https://github.com/jstabitunlikely/dotfiles/actions). Please file an issue in this repo if there are errors.
 
 ## Post-Installation
 
@@ -105,4 +107,4 @@ To customize the dotfiles to your likings, fork it and [be the king of your cast
 
 ## Credits
 
-Many thanks to the [dotfiles community](https://dotfiles.github.io).
+Many thanks to [webpro](https://github.com/webpro/dotfiles) for making his dotfiles available.
