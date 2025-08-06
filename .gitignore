@@ -4,3 +4,12 @@ __pycache__
 system/.custom
 system/.exports
 config/tmux/plugins
+
+appsupport/Code
+!appsupport/Code/User/settings.json
+
+appsupport/iTerm2
+!appsupport/iTerm2/DynamicProfiles/profile.json
+
+config/iTerm2
+!config/iTerm2/*.itermkeymap
