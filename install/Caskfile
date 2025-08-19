@@ -4,6 +4,7 @@ cask "font-hack"                # A typeface designed for source code
 cask "fork"                     # Git client
 cask "google-chrome"            # Web browser
 cask "iterm2"                   # Terminal emulator as alternative to Apple's Terminal app
+cask "joplin"                   # Note taking and to-do application with synchronisation capabilities
 cask "maccy"                    # Clipboard manager
 cask "meetingbar"               # Shows the next meeting in the menu bar
 # cask "proton-drive"             # Secure cloud storage client

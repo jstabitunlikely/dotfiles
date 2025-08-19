@@ -1,54 +1,54 @@
 [user]
-	name = Gergo Gacs
-	email = gacsgergo@gmail.com
+    name = Gergo Gacs
+    email = gacsgergo@gmail.com
 
 [github]
-	user = jstabitunlikely
+    user = jstabitunlikely
 
 [core]
-	excludesfile = ~/.config/git/ignore
-	editor = micro
-	filemode = false
-	trustctime = false
-	autocrlf = input
-	untrackedCache = true
-	pager = delta
-	ignorecase = false
+    excludesfile = ~/.config/git/ignore
+    editor = micro
+    filemode = false
+    trustctime = false
+    autocrlf = input
+    untrackedCache = true
+    pager = delta
+    ignorecase = false
 
 [pager]
-	diff = LESS=FR delta
+    diff = LESS=FR delta
 
 [commit]
     template = ~/.config/git/message
 
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 
 [pull]
-	rebase = true
+    rebase = true
 
 [rerere]
-	enabled = true
+    enabled = true
 
 [rebase]
-	autoStash = true
+    autoStash = true
 
 [init]
-	defaultBranch = main
+    defaultBranch = main
 
 [push]
-	default = simple
-	followTags = true
+    default = simple
+    followTags = true
     autoSetupRemote = true
 
 [fetch]
-	prune = true
+    prune = true
 
 [grep]
-	lineNumber = true
+    lineNumber = true
 
 [help]
-	autocorrect = 30
+    autocorrect = 30
 
 [pretty]
     log = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
@@ -57,7 +57,7 @@
     # Status
     s = status --short
     st = diff --name-only --staged
-	# REVISIT: this is madness and possible won't be used
+    # REVISIT: this is madness and possible won't be used
     ss = "!f() { git show --shortstat \"${1:-HEAD}\" | awk \"/files? changed/ { gsub(/,/, \\\"\\\", \\$4); gsub(/,/, \\\"\\\", \\$6); print \\\"\\033[32m+\\\" \\$4 \\\" \\033[31m-\\\" \\$6 \\\"\\033[0m\\\" }\"; }; f"
 
     # List files
@@ -69,40 +69,44 @@
     # Grep
     g = grep --break --heading --line-number
 
-	# Files
+    # Files
     a = add
     aa = add --all
     au = add --update
     rt = restore
     rts = restore --staged
-	ca = commit --amend
-	caf = commit --amend --no-edit
+    ca = commit --amend
+    caf = commit --amend --no-edit
     ci = commit
     cim = commit -m
 
-	# Branches
+    # Submodules
+    sm = submodule
+    smu = submodule update --init --recursive
+
+    # Branches
     b = branch
     ba = branch --all
     cb = checkout -b
-	co = checkout
+    co = checkout
     sw = switch
 
     # Rebase
     ri = rebase --interactive
-	ra = rebase --abort
-	rc = rebase --continue
-	rh = reset --hard
-	rh1 = rh HEAD^
+    ra = rebase --abort
+    rc = rebase --continue
+    rh = reset --hard
+    rh1 = rh HEAD^
 
-	# Remote
+    # Remote
     p = push
-	pf = push --force-with-lease
+    pf = push --force-with-lease
     pl = pull
 
     # Diff
-	d = diff --unified=0
-	dw = d --word-diff
-	patch = !git --no-pager diff --no-color
+    d = diff --unified=0
+    dw = d --word-diff
+    patch = !git --no-pager diff --no-color
     diffstat = "!f() { if [ $# -eq 0 ]; then git show --shortstat HEAD | tail -1; else git show --shortstat $1 | tail -1; fi; }; f"
 
     # Log
@@ -115,40 +119,40 @@
     ## Fuzzy log, returning only the SHA(s) to the command line
     fl = !git fll | awk '{print $2}' | xargs -I{} git rev-parse {}
     ## Date of the first commit
-	fc = "log --max-parents=0 --pretty=format:'%ad' --date=format:'%Y-%m-%d' -n 1"
-	## My commits from the last N (1 by default) days
+    fc = "log --max-parents=0 --pretty=format:'%ad' --date=format:'%Y-%m-%d' -n 1"
+    ## My commits from the last N (1 by default) days
     ld = "!sh -c \"git ll --since '${1:-1} days ago' --author $(git config user.email)\" -"
     ## New commits since last command i.e., pull
     new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
 
     # Misc
     ## Browse remote
-	h = browse
+    h = browse
 
 [diff]
-	renames = copies
-	indentHeuristic = true
-	colorMoved = default
+    renames = copies
+    indentHeuristic = true
+    colorMoved = default
     tool = vscode
 
 [difftool]
-	prompt = false
+    prompt = false
 
 [difftool "vscode"]
-	cmd = code --wait --diff $LOCAL $REMOTE
-	path =
+    cmd = code --wait --diff $LOCAL $REMOTE
+    path =
 
 [merge]
-	conflictstyle = diff3
-	defaultToUpstream = true
+    conflictstyle = diff3
+    defaultToUpstream = true
     tool = vscode
 
 [mergetool]
-	prompt = false
+    prompt = false
 
 [mergetool "vscode"]
-	cmd = code --wait $MERGED
-	trustExitCode = true
+    cmd = code --wait $MERGED
+    trustExitCode = true
 
 [include]
     path = ~/.config/git/themes.gitconfig
@@ -156,7 +160,7 @@
 [delta]
     true-color=always
     features = arctic-fox
-	navigate = true
+    navigate = true
     hyperlinks = true
     hyperlinks-file-link-format = "vscode://file/{path}:{line}"
 
@@ -164,14 +168,14 @@
     diffFilter = delta --color-only
 
 [color]
-	ui = auto
+    ui = auto
 
 [versionsort]
-	suffix = -alpha
-	suffix = -beta
-	suffix = -canary
-	suffix = -rc
-	suffix = -next
+    suffix = -alpha
+    suffix = -beta
+    suffix = -canary
+    suffix = -rc
+    suffix = -next
 
 [advice]
-	detachedHead = false
+    detachedHead = false
