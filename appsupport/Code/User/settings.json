@@ -3,7 +3,7 @@
     // Built-in
     //
     // Workbench
-    "workbench.colorTheme": "Tokyo Night",
+    "workbench.colorTheme": "Tokyo Night Storm",
     // Terminal
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "underline",
@@ -12,7 +12,7 @@
     "terminal.integrated.defaultProfile.osx": "zsh",
     // Editor
     "editor.wordWrapColumn": 120,
-    "editor.lineNumbers": "relative",
+    "editor.lineNumbers": "on",
     "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, FiraCode Nerd Font Mono",
     "editor.minimap.enabled": false,
     "editor.acceptSuggestionOnEnter": "smart",
@@ -29,7 +29,7 @@
         {
             "column": 120,
             "color": "#692969"
-        },
+        }
     ],
     // Diff
     "diffEditor.ignoreTrimWhitespace": true,
@@ -62,10 +62,9 @@
     "githubPullRequests.createOnPublishBranch": "never",
     "githubPullRequests.pullBranch": "never",
     // ErrorLens
-    "errorLens.enabledDiagnosticLevels": [
-        "error",
-        "warning"
-    ],
+    "errorLens.enabledDiagnosticLevels": ["error", "warning"],
+    // Prettier
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     // CodeSpell
     "cSpell.enabled": true,
     "cSpell.checkVSCodeSystemFiles": true,
@@ -93,12 +92,12 @@
     "python.analysis.inlayHints.callArgumentNames": "partial",
     "python.analysis.inlayHints.pytestParameters": true,
     // Autopep8
-    "autopep8.args": [
-        "--max-line-length=120"
-    ],
+    "autopep8.args": ["--max-line-length=120"],
     // MyPy
     "mypy-type-checker.reportingScope": "workspace",
     "mypy-type-checker.showNotifications": "onError",
+    // Formatting
+    "prettier.printWidth": 120,
     // Makefile
     "makefile.configureOnOpen": true,
     // Copilot
@@ -109,6 +108,18 @@
         "scminput": false,
         "yaml": false
     },
+    // YAML
+    "yaml.schemas": {
+        "file:///Users/gergo.gacs/.vscode/extensions/continue.continue-1.2.4-darwin-arm64/config-yaml-schema.json": [
+            ".continue/**/*.yaml"
+        ]
+    },
+    // Javascript
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    // SystemVerilog
+    "[systemverilog]": {
+        "editor.defaultFormatter": "chipsalliance.verible"
+    }
     //
     // End-of-manually-ordered-config
 }

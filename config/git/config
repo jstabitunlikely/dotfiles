@@ -102,6 +102,8 @@
     p = push
     pf = push --force-with-lease
     pl = pull
+    f = fetch
+    fa = fetch --all
 
     # Diff
     d = diff --unified=0
@@ -179,3 +181,4 @@
 
 [advice]
     detachedHead = false
+	addIgnoredFile = false

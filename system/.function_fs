@@ -4,6 +4,16 @@ mk() {
   mkdir -p "$@" && cd "$@"
 }
 
+# Find files or directories
+
+ff() {
+  find . -type f -name "$@" 2>/dev/null
+}
+
+fd(){
+  find . -type d -name "$@" 2>/dev/null
+}
+
 # Show disk usage of current folder, or list with depth
 
 duf() {

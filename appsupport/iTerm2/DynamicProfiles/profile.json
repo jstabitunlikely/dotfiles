@@ -3,6 +3,7 @@
         {
             "Name": "jstabitunlikely",
             "Guid": "C0EA26ED-2636-4516-A2F2-07F8FBA727D2",
+            "ShowFullScreenTabBar": true,
             "Foreground Color (Dark)": {
                 "Red Component": 0.86197912693023682,
                 "Color Space": "sRGB",
